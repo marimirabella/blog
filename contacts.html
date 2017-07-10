@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+	<head>
+		<title>Блог Живи путешествуя</title> 
+		<meta charset="utf-8">
+
+		<!-- Mobile Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Font Awesome CSS -->
+		<link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+
+		<!-- Core css file -->
+		<link rel="stylesheet" href="./css/style.css">
+	</head>
+	<body>
+		<!-- header start -->
+		<!-- ================== -->
+		<header class="header">
+			<nav class="header__nav container">
+				<div class="logo-menu"><a href="index.html" class="logo-menu__link">Живи Путешествуя</a></div>
+				<ul class="menu">
+					<li class="menu__item"><a href="blog.html" class="menu__link">Блог</a></li>
+					<li class="menu__item"><a href="about.html" class="menu__link">Информация</a>
+						<ul class="submenu">
+							<li class="submenu__item"><a href="about.html" class="submenu__link">О Блоге</a></li>
+							<li class="submenu__item"><a href="contacts.html" class="submenu__link">Контакты</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="socials">
+					<li class="socials__item"><a href="#" target="_blank" class="socials__link"><i class="fa fa-facebook socials__icon"></i></a></li>
+					<li class="socials__item"><a href="#" target="_blank" class="socials__link pinterest"><i class="fa fa-pinterest socials__icon"></i></a></li>
+					<li class="socials__item"><a href="#" target="_blank" class="socials__link instagram"><i class="fa fa-instagram socials__icon"></i></a></li>
+				</ul>
+				<div class="search"><input type="text" placeholder="Поиск..." class="search__text-field input"><input type="submit" value="Поиск" class="search__button btn shadow"></div>
+			</nav>
+		</header>
+		<!-- header end -->
+		<!-- ================== -->
+		
+		<!-- contacts start -->
+		<!-- ================== -->
+		<section class="about container section-header">
+			<header class="page__header">
+				<!-- breadcrumbs -->
+				<nav class="breadcrumbs-nav">
+					<ul class="breadcrumbs">
+						<li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">Главная</a></li>
+						<li class="breadcrumbs__item"><a href="blog.html" class="breadcrumbs__link">Информация</a></li>
+						<li class="breadcrumbs__item breadcrumbs__item_current">Контакты</li>
+					</ul>
+				</nav> 
+			</header>
+			<h1 class="contacts__header center">Контакты</h1>
+			<div class="contacts-wrapper clearfix">
+				<div class="email col">
+					<h2 class="email__header">Отправьте мне Email</h2>
+					<p class="email__text">Вы можете связаться со мной используя форму ниже.</p>
+					<label class="email__label">Имя: <input type="text" placeholder="Введите имя..." class="email__input input"></label><br>
+					<label class="email__label">Email: <input type="email" placeholder="Введите Email..." class="email__input input"></label><br>
+					<label class="email__label">Сообщение: <textarea cols="30" rows="10" placeholder="Введите сообщение..." class="email__input input"></textarea></label><br>
+					<input type="submit" value="Отправить" class="email__btn btn submit-btn">
+				</div>
+				<div class="google-map col">
+					<div id="google-map__map"></div>
+				</div>
+			</div>
+		</section>
+		<!-- contacts end -->
+		<!-- ================== -->
+		
+		<!-- footer start -->
+		<!-- ================== -->
+		<footer class="footer">
+			<p class="footer__copyright">&copy;2017 Марина Карповец</p>
+		</footer>
+		<!-- footer end -->
+		<!-- ================== -->
+		
+		<!-- Jquery -->
+		<script type="text/javascript" src="./js/jquery.min.js"></script>
+
+		<!-- JavaScript main -->
+		<script type="text/javascript" src="./js/script.js"></script>
+
+		<!-- Google map -->
+		<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+		<script> init_map.call();</script>
+	 
+	</body>
+</html>
