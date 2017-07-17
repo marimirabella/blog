@@ -1,0 +1,80 @@
+		<!-- settings start -->
+		<!-- ================== -->
+		<section class="settings container">
+			<header class="page__header">
+				<!-- breadcrumbs -->
+				<nav class="breadcrumbs-nav">
+					<ul class="breadcrumbs">
+						<li class="breadcrumbs__item"><a ui-sref="app" class="breadcrumbs__link">Главная</a></li>
+						<li class="breadcrumbs__item breadcrumbs__item_current">Блог</li>
+					</ul>
+				</nav> 
+			</header>
+			<!-- bind button to show the form -->
+			<button class="settings__button btn" ng-click="expand = !expand">Добавить Пост</button>
+			<label for="sort" class="sort-label">Сортировать по</label>
+			<select name="sort" id="sort" class="sort" ng-model="sortedBy">
+				<option class="sort__option" value="-date">Последним</option>
+				<option class="sort__option" value="header">Названию</option>
+				<option class="sort__option" value="date">Давним</option>
+			</select>
+			<!-- Show the form if expand and submit the form -->
+			<form class="create-post section slide" ng-show="expand" name="postForm" ng-submit="submitPost()">
+				<h3 class="create-post__header">Создание Поста</h3>
+				<label class="create-post__label">Заголовок
+					<input type="text" name="header" placeholder="Введите заголовок..." ng-model="newpost.header" class="create-post__input input" required>
+				</label><br>
+				<label class="create-post__label">Описание
+					<textarea name="description" cols="30" rows="10" placeholder="Введите текс поста..." ng-model="newpost.description" class="create-post__input input" required></textarea>
+				</label><br>
+				<label class="create-post__label">Адрес URL
+					<input type="text" id="image" name="image" ng-model="newpost.image" placeholder="http://images.google.com/travelling.jpg" class="create-post__input input"><br>
+				</label><br>
+				<input type="submit" name="add-post" value="Опубликовать" class="create-post__btn btn submit-btn">
+			</form>
+		</section>
+		<!-- settings end -->
+		<!-- ================== -->
+
+		<!-- posts start -->
+		<!-- ================== -->
+		<section class="posts container">
+			<input type="checkbox" class="filter__input" id="beach">
+			<input type="checkbox" class="filter__input" id="europe">
+			<input type="checkbox" class="filter__input" id="romance">
+			<input type="checkbox" class="filter__input" id="leisure">
+			<input type="checkbox" class="filter__input" id="winter">
+			<div class="filter">
+				<strong class="filter__header">Теги</strong>
+				<label for="beach" class="filter__label">#Пляж</label>
+				<label for="europe" class="filter__label">#Европа</label>
+				<label for="romance" class="filter__label">#Романтика</label>
+				<label for="leisure" class="filter__label">#Активный отдых</label>
+				<label for="winter" class="filter__label">#Отдых зимой</label>
+			</div>
+			<div class="post" ng-show="postForm.$valid">
+				<h2 class="post__header">{{newpost.header}}</h2>
+				<small class="post__date">{{newpost.date | date:'dd.MM.yyyy'}}</small>
+				<img src="{{newpost.image}}" alt="{{newpost.header}}" class="post__image">
+				<p class="post__text justify">{{newpost.description}}</p>
+			</div>
+			<div class="post {{post.class}}" ng-repeat="post in posts | orderBy:sortedBy | limitTo:10">
+				<h2 class="post__header">{{post.header}}</h2>
+				<small class="post__date">{{post.date | date:'dd.MM.yyyy'}}</small>
+				<img ng-src="{{post.image}}" alt="{{post.title}}" class="post__image">
+				<p class="post__text justify" ng-bind-html="trust(post.description.length > 538 ? ((post.description | limitTo: 538) + '...') : post.description )"></p>
+				<a ui-sref="app.post({id: post._id})" title="Подробнее" class="post__read-more btn">Подробнее</a>
+			</div>
+			<div class="pagination section">
+				<a href="#" class="pagination-list__prev">Назад</a>
+				<ul class="pagination-list">
+					<li class="pagination-list__item pagination-list__item__current">1</li>
+					<li class="pagination-list__item"><a href="#" class="pagination-list__page-number">2</a></li>
+					<li class="pagination-list__item">...</li>
+					<li class="pagination-list__item"><a href="#" class="pagination-list__page-number">5</a></li>
+				</ul>
+				<a href="#" class="pagination-list__next">Вперед</a>
+			</div>
+		</section>
+		<!-- posts еnd -->
+		<!-- ================== -->

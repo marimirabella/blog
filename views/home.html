@@ -1,0 +1,59 @@
+		<!-- slider section start -->
+		<!-- ================== -->
+		<section class="slider-section">
+			<!-- slider start -->
+			<div class="slider" id="slider" ng-click="stop()"> 
+
+				<!-- slider wraper start -->
+				<div class="slider__wraper"> 
+					<ul class="slider__slides">
+						<li class="slider__slide"><img src="./images/slide1_dark.jpg" class="slider__img" alt="Вокруг света"></li>
+						<li class="slider__slide"><img src="./images/slide2_dark.jpg" class="slider__img" alt="Природа"></li>
+					</ul>  
+				</div>
+				<!-- slider wraper end -->
+
+				<!-- slider content start-->
+				<h1 class="slider__header">Живи Путешествуя</h1>
+				<!-- slider content end -->
+
+			</div> 
+			<!-- slider end -->
+		</section>
+		<!-- slider section end -->
+		<!-- ================== -->
+
+		<!-- main start -->
+		<!-- ================== -->
+		<section class="main section container">
+			<header class="main-header">
+				<!-- breadcrumbs -->
+				<nav class="breadcrumbs-nav">
+					<ul class="breadcrumbs">
+						<li class="breadcrumbs__item breadcrumbs__item_current">Главная</li>
+					</ul>
+				</nav> 
+				<h2 class="main__header center">Добро пожаловать на Блог "Живи Путешествуя"</h2>
+			</header>
+			<p class="main__text justify">Этот вебсайт делится невероятными эмоциями о путешествиях и мире.</p>
+			<p class="main__text justify">Миллионы людей во всем мире проводят свой отпуск путешествуя. Они путешествуют, чтобы увидеть другие страны и континенты, современные города и руины древних городов, они путешествуют, чтобы насладиться живописными местами или просто сменить сцену. Всегда интересно открывать новые вещи и разные способы жизни, встречаться с разными людьми, попробовать различную пищу, послушать разную музыку.</p> 
+			<img src="./images/travel.jpg" alt="Путешествия" class="main__img">
+
+		</section>
+		<!-- main end -->
+		<!-- ================== -->
+		
+		<!-- recent posts start -->
+		<!-- ================== -->
+        <!-- Angular postsController controller -->
+		<section class="recent-posts container section clearfix" ng-controller="postsController">
+			<h3 class="recent-posts__header center">Недавние Посты</h3>
+			<div class="recent-post col" ng-repeat="post in posts | limitTo:4">
+				<h4 class="recent-post__header">{{post.header}}</h4>
+				<small class="recent-post__date">{{post.date | date:'dd.MM.yyyy'}}</small>
+				<p class="recent-post__text justify">{{post.description}}<a ui-sref="app.post({id: post._id})" class="recent-post__link">Подробнее</a></p>
+			</div>
+			<a ui-sref="app.blog" class="recent-post__btn btn">Больше</a>
+		</section>
+		<!-- recent posts еnd -->
+		<!-- ================== -->

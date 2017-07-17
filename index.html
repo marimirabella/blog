@@ -15,107 +15,38 @@
 		<link rel="stylesheet" href="./css/style.css">
 	</head>
 	<body>
-		<!-- header start -->
-		<!-- ================== -->
-		<header class="header">
-			<nav class="header__nav container">
-				<div class="logo-menu"><a href="index.html" class="logo-menu__link">Живи Путешествуя</a></div>
-				<ul class="menu">
-					<li class="menu__item"><a href="blog.html" class="menu__link">Блог</a></li>
-					<li class="menu__item"><a href="about.html" class="menu__link">Информация</a>
-						<ul class="submenu">
-							<li class="submenu__item"><a href="about.html" class="submenu__link">О Блоге</a></li>
-							<li class="submenu__item"><a href="contacts.html" class="submenu__link">Контакты</a></li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="socials">
-					<li class="socials__item"><a href="#" target="_blank" class="socials__link facebook"><i class="fa fa-facebook socials__icon"></i></a></li>
-					<li class="socials__item"><a href="#" target="_blank" class="socials__link pinterest"><i class="fa fa-pinterest socials__icon"></i></a></li>
-					<li class="socials__item"><a href="#" target="_blank" class="socials__link instagram"><i class="fa fa-instagram socials__icon"></i></a></li>
-				</ul>
-				<div class="search"><input type="text" placeholder="Поиск..." class="search__text-field input"><input type="submit" value="Поиск" class="search__button btn shadow"></div>
-			</nav>
-		</header>
-		<!-- header end -->
-		<!-- ================== -->
 		
-		<!-- slider section start -->
-		<!-- ================== -->
-		<section class="slider-section">
-			<!-- slider start -->
-			<div class="slider" id="slider"> 
-
-				<!-- slider wraper start -->
-				<div class="slider__wraper"> 
-					<ul class="slider__slides">
-						<li class="slider__slide"><img src="./images/slide1_dark.jpg" class="slider__img" alt="Вокруг света"></li>
-						<li class="slider__slide"><img src="./images/slide2_dark.jpg" class="slider__img" alt="Природа"></li>
-					</ul>  
-				</div>
-				<!-- slider wraper end -->
-
-				<!-- slider content start-->
-				<h1 class="slider__header">Живи Путешествуя</h1>
-				<!-- slider content end -->
-
-			</div> 
-			<!-- slider end -->
-		</section>
-		<!-- slider section end -->
-		<!-- ================== -->
+		<!-- Angular templates -->
+		<div ui-view="header"></div>
 		
-		<!-- main start -->
-		<!-- ================== -->
-		<section class="main section container">
-			<header class="main-header">
-				<!-- breadcrumbs -->
-				<nav class="breadcrumbs-nav">
-					<ul class="breadcrumbs">
-						<li class="breadcrumbs__item breadcrumbs__item_current">Главная</li>
-					</ul>
-				</nav> 
-				<h2 class="main__header center">Добро пожаловать на Блог "Живи Путешествуя"</h2>
-			</header>
-			<p class="main__text justify">Этот вебсайт делится невероятными эмоциями о путешествиях и мире.</p>
-			<p class="main__text justify">Миллионы людей во всем мире проводят свой отпуск путешествуя. Они путешествуют, чтобы увидеть другие страны и континенты, современные города и руины древних городов, они путешествуют, чтобы насладиться живописными местами или просто сменить сцену. Всегда интересно открывать новые вещи и разные способы жизни, встречаться с разными людьми, попробовать различную пищу, послушать разную музыку.</p> 
-			<img src="./images/travel.jpg" alt="Путешествия" class="main__img">
-
-		</section>
-		<!-- main end -->
-		<!-- ================== -->
-		
-		<!-- recent posts start -->
-		<!-- ================== -->
-        <!-- Angular controller -->
-		<section class="recent-posts container section clearfix" ng-controller="postsController">
-			<h3 class="recent-posts__header center">Недавние Посты</h3>
-			<div class="recent-post col" ng-repeat="post in posts | limitTo:4">
-				<h4 class="recent-post__header">{{post.header}}</h4>
-				<small class="recent-post__date">{{post.date | date:'dd.MM.yyyy'}}</small>
-				<p class="recent-post__text justify">{{post.description}}<a href="post.html" class="recent-post__link">Подробнее</a></p>
-			</div>
-			<a href="blog.html" class="recent-post__btn btn">Больше</a>
-		</section>
-		<!-- recent posts еnd -->
-		<!-- ================== -->
-		
-		<!-- footer start -->
-		<!-- ================== -->
-		<footer class="footer">
-			<p class="footer__copyright">&copy;2017 Марина Карповец</p>
-		</footer>
-		<!-- footer end -->
-		<!-- ================== -->
+		<!-- Autoscroll to the top of the page -->
+	    <div ui-view="content" autoscroll="true"></div>
+	    
+	    <div ui-view="footer"></div>
 		
 		<!-- Jquery -->
 		<script type="text/javascript" src="./js/jquery.min.js"></script>
 
 		<!-- Angular JS -->
 		<script src="./node_modules/angular/angular.min.js"></script>
+		
+		<!-- Angular router -->
+		<script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+		<!-- Angular animation -->
+		<script src="./node_modules/angular-animate/angular-animate.js"></script>
+
+		<!-- Google map -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABQgNjejL4_QhKjnOCigFMfShxPZl_s04" async defer></script>
 
 		<!-- Angular app.js -->
 		<script type="text/javascript" src="./js/app.js"></script>
+
+		<!-- Angular controllers.js -->
+		<script type="text/javascript" src="./js/controllers.js"></script>
+
+		<!-- Angular services.js -->
+		<script type="text/javascript" src="./js/services.js"></script>
 
 		<!-- JavaScript main -->
 		<script type="text/javascript" src="./js/script.js"></script>

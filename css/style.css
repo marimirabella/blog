@@ -100,7 +100,7 @@ ul {
 	font-family: 'Gabriela', serif;
 }
 
-.btn, .sort, #google-map__map {
+.btn, .search__button, .sort, .comments__sort, #google-map__map {
 	color: #000;
 	font-size: 0.9rem;
 	font-family: 'Gabriela', serif;
@@ -198,6 +198,7 @@ ul {
 	font-weight: bold;
 	text-transform: uppercase;
 	margin-right: 10px;
+	height: 100px;
 }
 
 .logo-menu__link {
@@ -256,19 +257,14 @@ ul {
 }
 
 .submenu {
-	visibility: hidden;
-	opacity: 0;
+	opacity: 1;
+	visibility: visible;
 	position: absolute;
 	left: 0;
 	text-align: left;
 	line-height: 45px;
 	background: rgba(0,0,0, 0.6);
 	padding: 11px 45px;
-	-webkit-transition: all 0.3s  ease-in-out;
-	-o-transition: all 0.3s  ease-in-out;
-	-moz-transition:  all 0.3s  ease-in-out;
-	-ms-transition:  all 0.3s  ease-in-out;
-	transition: all 0.3s  ease-in-out;
 }
 
 .submenu__item {
@@ -278,6 +274,26 @@ ul {
 
 .submenu__link {
 	color: #fff;
+}
+
+/* angular animation for submenu */
+.animate-show-hide.ng-hide {
+	display: block !important;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-moz-transition:  all 0.3s ease-in-out;
+	-ms-transition:  all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.submenu.animate-show-hide{
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-moz-transition:  all 0.3s ease-in-out;
+	-ms-transition:  all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
 
 .socials {
@@ -310,10 +326,20 @@ ul {
 	color: #fff;
 	margin-left: 5px;
 	width: 30%;
+	line-height: 21px;
 } 
 
 .search__text-field {
 	width: 50%;
+}
+
+.search-section {
+	padding-top: 120px;
+	padding-bottom: 30px;
+}
+
+.search-results__header {
+	margin-bottom: 30px;
 }
 
 /* Fixed Header */
@@ -324,10 +350,6 @@ ul {
 .fixed-header-on {
 	background-color: rgba(0, 0, 0, 0.9);
 	font-size: 1.15rem;
-}
-
-header + section {
-	padding-top: 120px;
 }
 
 /****** Slider ******/
@@ -447,9 +469,11 @@ header + section {
 
 /* Ellipsis */
 .recent-post__text {
-	height: 110px;
+	height: 121px;
     overflow: hidden;
     position: relative;
+    font-size: 16px;
+    word-spacing: 2px;
 }
 
 .recent-post__text::after {
@@ -470,7 +494,7 @@ header + section {
 
 .recent-post__link {
 	position: absolute;
-    bottom: 2px;
+    bottom: -2px;
     right: 0;
     background: white;
 }
@@ -482,37 +506,31 @@ header + section {
 
 /******* Blog ******/
 /********************/
+.current-post-section {
+	padding-top: 120px;
+}
+
 .page__header:not(.main-header) {
 	margin-bottom: 30px;
 }
 
 .settings__button {
-	margin-right: 15px;
+	margin-right: 20px;
 }
 
 .settings {
+	padding-top: 120px;
 	font-weight: bold;
 }
 
 .sort {
 	font-weight: normal;
-}
-
-.create-post {
-	display: none;
+	margin-left: 5px;
 }
 
 .create-post__input {
 	width: 100%;
 	margin: 10px 0;
-}
-
-.create-post__file-btn {
-	visibility: hidden;
-}
-
-.create-post__btn {
-	margin-top: 20px;
 }
 
 .filter {
@@ -670,6 +688,7 @@ a[class^="pagination-list"], .pagination-list__item:nth-child(3), .pagination-li
 
 .email__btn {
 	margin-top: 10px;
+	margin-bottom: 20px;
 }
 
 /* Google map */
@@ -711,19 +730,19 @@ a[class^="pagination-list"], .pagination-list__item:nth-child(3), .pagination-li
 	margin-right: 60px;
 }
 
-.comments__sort {
-	margin-top: 18px;
+.comment-sort-label {
+	font-weight: bold;
+	margin-right: 5px;
 }
 
-.comments__sort-input {
-	margin-left: 10px;
+.comments__sort {
+	font-weight: normal;
 }
 
 blockquote {
 	border-left: 5px solid #2ad3bf;
 	padding: 10px 10px;
 	line-height: 2.5rem;
-
 }
 
 .comment__text {
@@ -793,6 +812,7 @@ section + footer {
 	.logo-menu {
 		width: 100%;
 		margin-left: 20px;
+		height: 60px;
 	}
 
 	.header__nav > ul {
