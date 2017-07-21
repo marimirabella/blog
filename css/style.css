@@ -46,7 +46,7 @@ a, .filter__label {
 	display: inline-block;
 }
 
-a:focus, a:hover, .filter__label:hover {
+a:hover, .filter__label:hover {
 	color: #339aea;
 }
 
@@ -61,6 +61,10 @@ ul {
 	margin: 0;
 	padding: 0;
 	font-size: 0;
+}
+
+header a {
+	color: #fff;
 }
 
 .input {
@@ -100,7 +104,7 @@ ul {
 	font-family: 'Gabriela', serif;
 }
 
-.btn, .search__button, .sort, .comments__sort, #google-map__map {
+.btn {
 	color: #000;
 	font-size: 0.9rem;
 	font-family: 'Gabriela', serif;
@@ -222,14 +226,6 @@ ul {
 	height: 100px;
 }
 
-.header > nav > ul > li {
-	display: inline-block;
-}
-
-.header > nav > ul > li > a, .logo-menu__link {
-	color: #fff;
-}
-
 .menu__item:last-child {
 	position: relative;
 }
@@ -247,6 +243,10 @@ ul {
 
 .menu__item:hover a:not(.submenu__link){
 	color: #339aea;
+}
+
+.active {
+	color: #0082e0;
 }
 
 .menu__link {
@@ -301,6 +301,7 @@ ul {
 }
 
 .socials__item {
+	display: inline-block;
 	padding: 0 10px;
 	font-size: 1.3rem;
 }
@@ -467,9 +468,13 @@ ul {
 	font-family: 'Gabriela', serif;
 }
 
+.recent-post__header {
+	min-height: 46px;
+}
+
 /* Ellipsis */
 .recent-post__text {
-	height: 121px;
+	height: 177px;
     overflow: hidden;
     position: relative;
     font-size: 16px;
@@ -492,16 +497,22 @@ ul {
 	font-weight: normal;
 }
 
+.recent-post__text h2 {
+	font-size: 19px;
+}
+
 .recent-post__link {
 	position: absolute;
-    bottom: -2px;
+    bottom: 0;
     right: 0;
     background: white;
+    line-height: 16px;
 }
 
 .recent-post__btn {
 	display: table;
 	margin: 0 auto;
+	clear: both;
 }
 
 /******* Blog ******/

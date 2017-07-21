@@ -2,10 +2,11 @@
 		<!-- ================== -->
 		<header class="header" id="header">
 			<nav class="header__nav container">
-				<div class="logo-menu"><a ui-sref="app" class="logo-menu__link">Живи Путешествуя</a></div>
+				<!-- active class for current menu-item -->
+				<div class="logo-menu"><a ui-sref="app" class="logo-menu__link" ng-class="{ active: isActive('/') }">Живи Путешествуя</a></div>
 				<ul class="menu">
-					<li class="menu__item"><a ui-sref="app.blog" class="menu__link">Блог</a></li>
-					<li class="menu__item" ng-mouseover="overSubmenu()" ng-mouseleave="hideSubmenu()"><a ui-sref="app.about" class="menu__link" ng-mouseover="overSubmenu()">Информация</a>
+					<li class="menu__item"><a ui-sref="app.blog" class="menu__link" ng-class="{ active: isActive('/blog') }">Блог</a></li>
+					<li class="menu__item" ng-mouseover="overSubmenu()" ng-mouseleave="hideSubmenu()"><a ui-sref="app.about" class="menu__link" ng-class="{ active: isActive('/about') || isActive('/contacts')}" ng-mouseover="overSubmenu()">Информация</a>
 						<ul class="submenu animate-show-hide" ng-show="showSubmenu">
 							<li class="submenu__item"><a ui-sref="app.about" class="submenu__link">О Блоге</a></li>
 							<li class="submenu__item"><a ui-sref="app.contacts" class="submenu__link">Контакты</a></li>

@@ -31,7 +31,7 @@ angular.module('blog', ['ui.router', 'ngAnimate'])
                     },
                     'content': {
                         templateUrl : 'views/home.html',
-                        controller  : 'OnloadController'
+                        controller  : 'postsController'
                     },
                     'footer': {
                         templateUrl : 'views/footer.html',

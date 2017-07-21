@@ -6,6 +6,12 @@ angular.module('blog')
 
 		$scope.sortedBy = 'date';
 		
+		// Show active menu-item
+		$scope.isActive = function (viewLocation) {
+		     var active = (viewLocation === $location.path());
+		     return active;
+		};
+
 		$scope.blogService = blogService;
 
 		// Call function and return posts 
@@ -76,14 +82,7 @@ angular.module('blog')
         	$scope.showSubmenu = false;
         }
 
-	}])
-	
-	// Controller for slider and scroll
-	.controller('OnloadController', ['$scope', '$interval', 'blogService', function($scope, $interval, blogService) {
-
-		$scope.blogService = blogService;
-
-		// On page loading
+        // On page loading scroll
 		angular.element(document).ready(function() {
 
 			$(window).scroll(function() {
@@ -97,7 +96,16 @@ angular.module('blog')
 					}
 				};
 			});
-        	
+		});
+
+	}])
+	
+	// Controller for slider and scroll
+	.controller('SliderController', ['$scope', '$interval', function($scope, $interval) {
+
+		// On page loading start slider
+		angular.element(document).ready(function() {
+
         	// Slider content fade In
 		    $(".slider__header").fadeIn(3000); 
 
