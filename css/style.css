@@ -474,7 +474,7 @@ header a {
 
 /* Ellipsis */
 .recent-post__text {
-	height: 177px;
+	height: 178px;
     overflow: hidden;
     position: relative;
     font-size: 16px;
@@ -497,16 +497,20 @@ header a {
 	font-weight: normal;
 }
 
+.recent-post__text p {
+	margin: 0;
+}
+
 .recent-post__text h2 {
-	font-size: 19px;
+	font-size: 16px;
+	margin: 9.2px 0;
 }
 
 .recent-post__link {
 	position: absolute;
-    bottom: 0;
+    bottom: -3px;
     right: 0;
     background: white;
-    line-height: 16px;
 }
 
 .recent-post__btn {

@@ -103,6 +103,9 @@ angular.module('blog')
 	// Controller for slider and scroll
 	.controller('SliderController', ['$scope', '$interval', function($scope, $interval) {
 
+		// pause
+		$scope.pause = false; 
+
 		// On page loading start slider
 		angular.element(document).ready(function() {
 
@@ -111,16 +114,13 @@ angular.module('blog')
 
 		    $scope.showSlide = function(){ 
 				var currentWidth = $(".slider__slide").width();
-				$(".slider__slides").animate({
+				$(".slider__slides").stop().animate({
 		            left: - currentWidth
 		        }, 'slow', function () {
 		            $('.slider__slide:first-child').appendTo('.slider__slides');
 		            $('.slider__slides').css('left', '');
 		        });
 			}
-
-			// pause
-			$scope.pause = false; 
 
 			$scope.stop = function(){
 				$scope.pause = !$scope.pause;
